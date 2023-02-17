@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:keyboard_utils/keyboard_listener.dart';
@@ -177,7 +175,7 @@ class EventsChannelSpy {
   }
 
   Future<void> _sendMessage(ByteData data) {
-    return ServicesBinding.instance!.defaultBinaryMessenger
+    return ServicesBinding.instance.defaultBinaryMessenger
         .handlePlatformMessage(
             eventsMethodChannel.name, data, (ByteData? data) {});
   }
